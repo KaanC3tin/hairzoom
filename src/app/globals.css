@@ -1,42 +1,302 @@
-:root {
-  --background: #ffffff;
-  --foreground: #171717;
-}
-
-@media (prefers-color-scheme: dark) {
-  :root {
-    --background: #0a0a0a;
-    --foreground: #ededed;
-  }
-}
-
-html,
+/* /*
 body {
-  max-width: 100vw;
-  overflow-x: hidden;
-}
-
-body {
-  color: var(--foreground);
-  background: var(--background);
-  font-family: Arial, Helvetica, sans-serif;
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
-}
-
-* {
-  box-sizing: border-box;
-  padding: 0;
-  margin: 0;
-}
-
-a {
-  color: inherit;
-  text-decoration: none;
 }
 
 @media (prefers-color-scheme: dark) {
   html {
     color-scheme: dark;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+/* /*
+body {
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+@media (prefers-color-scheme: dark) {
+  html {
+    color-scheme: dark;
+  }
+}
+
+@layer base {
+  :root {
+    --background: 0 0% 100%;
+    --foreground: 240 10% 3.9%;
+    --card: 0 0% 100%;
+    --card-foreground: 240 10% 3.9%;
+    --popover: 0 0% 100%;
+    --popover-foreground: 240 10% 3.9%;
+    --primary: 240 5.9% 10%;
+    --primary-foreground: 0 0% 98%;
+    --secondary: 240 4.8% 95.9%;
+    --secondary-foreground: 240 5.9% 10%;
+    --muted: 240 4.8% 95.9%;
+    --muted-foreground: 240 3.8% 46.1%;
+    --accent: 240 4.8% 95.9%;
+    --accent-foreground: 240 5.9% 10%;
+    --destructive: 0 84.2% 60.2%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 5.9% 90%;
+    --input: 240 5.9% 90%;
+    --ring: 240 10% 3.9%;
+    --chart-1: 12 76% 61%;
+    --chart-2: 173 58% 39%;
+    --chart-3: 197 37% 24%;
+    --chart-4: 43 74% 66%;
+    --chart-5: 27 87% 67%;
+    --radius: 0.5rem;
+  }
+  .dark {
+    --background: 240 10% 3.9%;
+    --foreground: 0 0% 98%;
+    --card: 240 10% 3.9%;
+    --card-foreground: 0 0% 98%;
+    --popover: 240 10% 3.9%;
+    --popover-foreground: 0 0% 98%;
+    --primary: 0 0% 98%;
+    --primary-foreground: 240 5.9% 10%;
+    --secondary: 240 3.7% 15.9%;
+    --secondary-foreground: 0 0% 98%;
+    --muted: 240 3.7% 15.9%;
+    --muted-foreground: 240 5% 64.9%;
+    --accent: 240 3.7% 15.9%;
+    --accent-foreground: 0 0% 98%;
+    --destructive: 0 62.8% 30.6%;
+    --destructive-foreground: 0 0% 98%;
+    --border: 240 3.7% 15.9%;
+    --input: 240 3.7% 15.9%;
+    --ring: 240 4.9% 83.9%;
+    --chart-1: 220 70% 50%;
+    --chart-2: 160 60% 45%;
+    --chart-3: 30 80% 55%;
+    --chart-4: 280 65% 60%;
+    --chart-5: 340 75% 55%;
+  }
+  .theme {
+    --animate-marquee: marquee var(--duration) infinite linear;
+    --animate-marquee-vertical: marquee-vertical var(--duration) linear infinite;
+  }
+}
+
+@layer base {
+  * {
+    @apply border-border;
+  }
+  body {
+    @apply bg-background text-foreground;
+  }
+} */
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+/* Font Tanımı */
+@font-face {
+  font-family: "BarberChop";
+  src: url("/fonts/Bright-Aura.ttf") format("truetype");
+  font-display: swap;
+}
+
+/* Root Değişkenleri */
+:root {
+  --color-yellow: #fbbf24;
+  --color-white: #efefef;
+  --font-sans: Mona Sans, sans-serif;
+  --font-modern: "BarberChop", sans-serif;
+  --font-serif: "DM Serif Text", serif;
+  --bg: #000000;
+  --color: #fff;
+}
+
+/* Genel HTML & Body stilleri */
+html,
+body {
+  width: 100%;
+  background-color: var(--bg);
+  color: var(--color-white);
+  scroll-behavior: smooth;
+  overflow-x: hidden;
+  font-family: var(--font-modern);
+
+  /* font-family: var(--); */
+}
+
+/* video {
+  @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
+}
+main {
+  @apply w-full overflow-x-hidden;
+} */
+
+/* .noisy {
+  @apply absolute inset-0 size-full z-10 bg-[url("/images/noise.jpg")];
+} */
+
+/* elfsight widget'ı zorla genişlet */
+.elfsight-app {
+  width: 100% !important;
+  max-width: 100% !important;
+  display: block !important;
+}
+
+@layer utilities {
+  .radial-gradient {
+    background: radial-gradient(
+      circle at center,
+      #434343 5%,
+      #000 50%,
+      transparent 100%
+    );
+  }
+}
+
+/* @layer utilities {
+  .masked-img {
+    mask-image: url("/images/makas4.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: 50%;
+  }
+} */
+
+@layer utilities {
+  .masked-img {
+    mask-image: url("/images/makas4.png");
+    mask-repeat: no-repeat;
+    mask-position: center;
+    mask-size: contain; /* ✅ her zaman tam sığar */
+    -webkit-mask-image: url("/images/makas4.png");
+    -webkit-mask-repeat: no-repeat;
+    -webkit-mask-position: center;
+    -webkit-mask-size: contain;
+  }
+
+  /* Farklı cihazlar için istenirse custom responsive boyutlar */
+  @media (max-width: 767px) {
+    .masked-img {
+      mask-size: 80%;
+      -webkit-mask-size: 80%;
+    }
+  }
+
+  @media (min-width: 768px) and (max-width: 1023px) {
+    .masked-img {
+      mask-size: 70%;
+      -webkit-mask-size: 70%;
+    }
+  }
+
+  @media (min-width: 1024px) and (max-width: 1535px) {
+    .masked-img {
+      mask-size: 60%;
+      -webkit-mask-size: 60%;
+    }
+  }
+
+  @media (min-width: 1536px) {
+    .masked-img {
+      mask-size: 50%;
+      -webkit-mask-size: 50%;
+    }
+  }
+}
+
+#art {
+  @apply flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
+
+  .cocktail-img {
+    @apply md:w-[60vw] w-full h-[50vh] md:h-[90vh] overflow-hidden absolute top-0 md:top-1/2 md:-translate-y-1/2 left-1/2 -translate-x-1/2;
+  }
+
+  .masked-container {
+    h2 {
+      @apply text-4xl md:text-5xl text-center mb-10 text-white mt-32;
+    }
+
+    div {
+      @apply opacity-0 md:px-0 px-5 space-y-5 absolute md:bottom-5 bottom-52 left-1/2 -translate-x-1/2;
+
+      h3 {
+        @apply md:text-5xl text-2xl text-center font-serif md:w-full w-80 text-white;
+      }
+
+      p {
+        @apply text-lg text-center;
+      }
+    }
   }
 }
