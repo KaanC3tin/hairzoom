@@ -4,7 +4,7 @@
 // const GooglePreview = () => {
 //     return (
 
-//         <main className='flex flex-col items-center justify-center py-10 px-6 md:px-16 lg:px-32'>
+//         <main className='flex flex-col items-center justify-center py-10 px-6 md:px-16 lg:px-32' id='googlePreview'>
 //             <h2 className='text-4xl bg-white text-black p-5 w-full flex justify-center mb-10'>Yorumlarınız Bizim İçin Çok Değerli...</h2>
 //             <Script
 //                 src="https://static.elfsight.com/platform/platform.js"

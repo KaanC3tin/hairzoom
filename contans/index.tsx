@@ -12,6 +12,12 @@ export type ContactInformationItem = {
     address: string;
 };
 
+export type LocationLinkItem = {
+    id: string;
+    title: string;
+    href: string;
+}
+
 export type OpeningHoursItem = {
     day: string;
     hours: string;
@@ -144,6 +150,20 @@ export const contactInformation: ContactInformationItem[] = [
     },
 ]
 
+export const locationLinks: LocationLinkItem[] = [
+    {
+        id: 1,
+        title: 'Konum',
+        href: '#googlePreview'
+    }, {
+        id: 2,
+        title: 'SSS',
+        href: '#faq'
+    }, {
+
+    }
+]
+// hizmetlerimiz bölümünden hem kadın hemde erkek için footer kısmına eklenecek + İşletme açılış kapanış saatleri + 
 export const teamMembers: TeamMembersItem[] = [
     {
         id: 'burak',

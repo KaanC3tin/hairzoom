@@ -233,48 +233,6 @@ main {
   }
 } */
 
-@layer utilities {
-  .masked-img {
-    mask-image: url("/images/makas4.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: contain; /* ✅ her zaman tam sığar */
-    -webkit-mask-image: url("/images/makas4.png");
-    -webkit-mask-repeat: no-repeat;
-    -webkit-mask-position: center;
-    -webkit-mask-size: contain;
-  }
-
-  /* Farklı cihazlar için istenirse custom responsive boyutlar */
-  @media (max-width: 767px) {
-    .masked-img {
-      mask-size: 80%;
-      -webkit-mask-size: 80%;
-    }
-  }
-
-  @media (min-width: 768px) and (max-width: 1023px) {
-    .masked-img {
-      mask-size: 70%;
-      -webkit-mask-size: 70%;
-    }
-  }
-
-  @media (min-width: 1024px) and (max-width: 1535px) {
-    .masked-img {
-      mask-size: 60%;
-      -webkit-mask-size: 60%;
-    }
-  }
-
-  @media (min-width: 1536px) {
-    .masked-img {
-      mask-size: 50%;
-      -webkit-mask-size: 50%;
-    }
-  }
-}
-
 #art {
   @apply flex-col min-h-dvh p-5 mt-20 relative radial-gradient;
 
