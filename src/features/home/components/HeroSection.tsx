@@ -132,7 +132,7 @@ const HeroSection = () => {
                                 özgüveninizi yeniden şekillendiriyoruz.
                             </p>
                             <Link
-                                href="#hizmetlerimiz"
+                                href="#service"
                                 className="subtitle font-semibold opacity-80 2xl:text-start text-center hover:text-yellow-600 duration-300 hover:underline-offset-2 hover:underline underline-none transition-all"
                             >
                                 Hizmetlerimiz!

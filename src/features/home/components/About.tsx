@@ -40,7 +40,7 @@ const About = () => {
 
     return (
         <section
-            id='hakkimizda'
+            id='about'
             ref={sectionRef}
             className="relative text-white min-h-screen overflow-hidden flex flex-col md:flex-row bg-gradient-to-r from-amber-800 via-amber-600 to-amber-800"
         >

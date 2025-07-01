@@ -81,9 +81,9 @@ export const navLinks: NavLinkItem[] = [
         href: '#home',
     },
     {
-        id: 'art',
+        id: 'about',
         title: 'Hakkımızda',
-        href: '#hakkimizda',
+        href: '#about',
     },
     {
         id: 'service',
