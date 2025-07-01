@@ -34,59 +34,10 @@ const AnimationComponent = ({ children }: AnimationComponentProps) => {
                     trigger: containerRef.current,
                     start: 'top 95%',
                     toggleActions: 'play none none none'
-                }
+                },
             }
         );
 
-        // Yöntem 2: Alternatif - scale ve opacity kombinasyonu
-        /*
-        gsap.fromTo(
-            containerRef.current,
-            {
-                scale: 0.9,
-                opacity: 0,
-                filter: 'blur(3px)',
-            },
-            {
-                scale: 1,
-                opacity: 1,
-                filter: 'blur(0px)',
-                duration: 2,
-                delay: 0.2,
-                ease: 'power4.inOut',
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top 95%',
-                    toggleActions: 'play none none none'
-                }
-            }
-        );
-        */
-
-        // Yöntem 3: Clip-path ile giriş efekti
-        /*
-        gsap.fromTo(
-            containerRef.current,
-            {
-                clipPath: 'inset(100% 0 0 0)',
-                opacity: 0,
-                filter: 'blur(3px)',
-            },
-            {
-                clipPath: 'inset(0% 0 0 0)',
-                opacity: 1,
-                filter: 'blur(0px)',
-                duration: 2,
-                delay: 0.2,
-                ease: 'power4.inOut',
-                scrollTrigger: {
-                    trigger: containerRef.current,
-                    start: 'top 95%',
-                    toggleActions: 'play none none none'
-                }
-            }
-        );
-        */
     });
 
     return (

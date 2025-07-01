@@ -171,7 +171,6 @@ body {
   font-display: swap;
 }
 
-/* Root Değişkenleri */
 :root {
   --color-yellow: #fbbf24;
   --color-white: #efefef;
@@ -191,20 +190,7 @@ body {
   scroll-behavior: smooth;
   overflow-x: hidden;
   font-family: var(--font-modern);
-
-  /* font-family: var(--); */
 }
-
-/* video {
-  @apply w-full md:h-[80%] h-1/2 absolute bottom-0 left-0 md:object-contain object-bottom object-cover;
-}
-main {
-  @apply w-full overflow-x-hidden;
-} */
-
-/* .noisy {
-  @apply absolute inset-0 size-full z-10 bg-[url("/images/noise.jpg")];
-} */
 
 /* elfsight widget'ı zorla genişlet */
 .elfsight-app {
@@ -223,15 +209,6 @@ main {
     );
   }
 }
-
-/* @layer utilities {
-  .masked-img {
-    mask-image: url("/images/makas4.png");
-    mask-repeat: no-repeat;
-    mask-position: center;
-    mask-size: 50%;
-  }
-} */
 
 #art {
   @apply flex-col min-h-dvh p-5 mt-20 relative radial-gradient;

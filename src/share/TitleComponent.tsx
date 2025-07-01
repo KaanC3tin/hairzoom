@@ -1,31 +1,3 @@
-// 'use client';
-// import { useGSAP } from '@gsap/react';
-// import gsap from 'gsap';
-// import React, { useRef } from 'react'
-
-
-// interface TitleItemProps {
-//     children: React.ReactNode;
-// }
-
-// export const TitleComponent = ({ children }: TitleItemProps) => {
-//     const titleRef = useRef(null);
-//     useGSAP(() => {
-
-//         gsap.to(titleRef.current, { x: 100, duration: 1, ease: 'elastic.inOut' })
-//     })
-//     return (
-//         <>
-//             <h2 className="text-4xl font-bold  mb-16 bg-[#f4f4f4] p-5 text-black  flex items-center justify-center"
-//                 ref={titleRef}>
-//                 {children}
-//             </h2>
-
-//         </>
-//     )
-// }
-
-// export default TitleComponent
 'use client';
 import React, { useRef } from 'react';
 import { useGSAP } from '@gsap/react';
@@ -37,6 +9,7 @@ gsap.registerPlugin(ScrollTrigger);
 interface TitleComponentProps {
     children: React.ReactNode;
 }
+
 const TitleComponent = ({ children }: TitleComponentProps) => {
     const containerRef = useRef(null);
 
@@ -44,32 +17,43 @@ const TitleComponent = ({ children }: TitleComponentProps) => {
         gsap.fromTo(
             containerRef.current,
             {
-                transform: 'translateX(-100px)',    // Soldan gelsin
+                x: -100,
                 opacity: 0,
             },
             {
-                transform: 'translateX(0px)',    // Soldan gelsin
+                x: 0,
                 opacity: 1,
                 duration: 0.8,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: containerRef.current,
                     start: 'top 80%',
-                    toggleActions: 'play none none none', // sadece bir kere oyna
+                    toggleActions: 'play none none none',
                 },
             }
         );
     }, []);
 
     return (
-        <section
+        <div
             ref={containerRef}
-            className="w-full flex items-center justify-center bg-gray-100 mx-auto text-center"
+            className="inset-0 z-20 flex items-center justify-center py-16 sm:px-10 md:px-12 lg:px-32 px-6"
         >
-            <h1 className="text-5xl md:text-8xl font-extrabold text-center text-gray-800">
-                {children}
-            </h1>
-        </section>
+            <div className="relative text-center">
+                {/* Arka yazı (arka plan efekt) */}
+                <h1 className="text-[clamp(2.5rem,10vw,8rem)] font-black text-white/10 select-none tracking-[0.25em]">
+                    {children}
+                </h1>
+
+                {/* Önde görünen yazı */}
+                <h1 className="absolute inset-0 flex items-center justify-center text-[clamp(1.75rem,6vw,4rem)] font-bold text-white tracking-wide">
+                    {children}
+                </h1>
+
+                {/* Alt Çizgi */}
+                <div className="absolute -bottom-5 left-1/2 transform -translate-x-1/2 w-32 h-1 bg-gradient-to-r from-amber-500 to-amber-400 rounded-full blur-[1px]" />
+            </div>
+        </div>
     );
 };
 

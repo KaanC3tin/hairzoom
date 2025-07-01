@@ -11,7 +11,10 @@ export type ContactInformationItem = {
     email: string
     address: string;
 };
-
+export type GaleriaItem = {
+    id: string;
+    href: string;
+}
 export type LocationLinkItem = {
     id: string;
     title: string;
@@ -80,7 +83,7 @@ export const navLinks: NavLinkItem[] = [
     {
         id: 'art',
         title: 'Hakkımızda',
-        href: '#art',
+        href: '#hakkimizda',
     },
     {
         id: 'service',
@@ -193,129 +196,6 @@ export const aboutContent: AboutItem[] = [
         image: '/images/about.jpg',
     }
 ];
-
-// export const services: ServicesItem[] = [
-//     {
-//         categoryTitle: 'Erkek Bölümü Hizmetlerimiz',
-//         category: 'erkek',
-//         items: [
-//             {
-//                 title: 'Saç Kesimi',
-//                 description: 'Profesyonel saç kesimi hizmeti ile yeni bir görünüm kazanın.',
-//                 image: '/images/services/haircut.jpg',
-//             },
-//             {
-//                 title: 'Saç Renklendirme',
-//                 description: 'En son trendlerle saçınızı renklendirin.',
-//                 image: '/images/services/coloring.jpg',
-//             },
-//             {
-//                 title: 'Saç Şekillendirme',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Saç Botoksu',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Kaş Tasarımı',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Manikür',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Damat Traşı',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//         ]
-//     },
-//     {
-//         categoryTitle: 'Kadın Bölümü Hizmetlerimiz',
-//         category: 'kadın',
-//         items: [
-//             {
-//                 title: 'Saç Renklendirme',
-//                 description: 'En son trendlerle saçınızı renklendirin.',
-//                 image: '/images/services/coloring.jpg',
-//             },
-//             {
-//                 title: 'Cilt Bakımı',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Topuz',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Pedikür',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Manikür',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Kaş Tasarımı',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Saç Düzleştirme',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//             {
-//                 title: 'Saç Tasarımı',
-//                 description: 'Özel günler için saçınızı stilize edin.',
-//                 image: '/images/services/styling.jpg',
-//             },
-//         ]
-//     }
-// ];
-
-// export const services: ServicesItem[] = [
-//     {
-//         title: 'Keratin Bakımı',
-//         description: 'Saçlarınıza parlaklık ve sağlık kazandıran özel keratin bakımı.',
-//         image: '/images/services/keratin.jpg',
-//     },
-//     {
-//         title: 'Saç Renklendirme (Balayage / Ombre)',
-//         description: 'En yeni trendlerle kusursuz renklendirme teknikleri.',
-//         image: '/images/services/coloring.jpg',
-//     },
-//     {
-//         title: 'Cilt Bakımı ve Güzellik Ritüeli',
-//         description: 'Lüks cilt bakımı ile tazelenin ve ışıldayın.',
-//         image: '/images/services/skincare.jpg',
-//     },
-//     {
-//         title: 'Gelin Saçı & Makyajı',
-//         description: 'Özel gününüzde en güzel haliniz için profesyonel hazırlık.',
-//         image: '/images/services/bridal.jpg',
-//     },
-//     {
-//         title: 'Damat Traşı (VIP)',
-//         description: 'Özel günlerde size özel bakım ve stil deneyimi.',
-//         image: '/images/services/groom.jpg',
-//     },
-//     {
-//         title: 'Kaş Laminasyonu & Tasarımı',
-//         description: 'Yüzünüze uygun profesyonel kaş şekillendirme ve sabitleme.',
-//         image: '/images/services/brows.jpg',
-//     },
-// ];
 
 export const services: ServicesItem[] = [
     {
@@ -450,3 +330,44 @@ export const faqs: FaqItem[] = [
     }
 
 ];
+
+export const galerias: GaleriaItem[] = [
+    {
+        id: '1',
+        href: '/images/galeria-1.jpeg'
+
+    },
+    {
+        id: '2',
+        href: '/images/galeria-2.jpeg'
+
+    }, {
+        id: '3',
+        href: '/images/galeria-3.jpeg'
+
+    }, {
+        id: '4',
+        href: '/images/galeria-4.jpeg'
+
+    }, {
+        id: '5',
+        href: '/images/galeria-5.jpeg'
+
+    }, {
+        id: '6',
+        href: '/images/galeria-6.jpeg'
+
+    }, {
+        id: '7',
+        href: '/images/galeria-7.jpeg'
+
+    }, {
+        id: '8',
+        href: '/images/galeria-8.jpeg'
+
+    }, {
+        id: '9',
+        href: '/images/galeria-9.jpg'
+
+    },
+]

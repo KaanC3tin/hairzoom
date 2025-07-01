@@ -1,12 +1,12 @@
 import { ScrollTrigger, SplitText } from 'gsap/all';
 import gsap from 'gsap';
 import HeroSection from './components/HeroSection';
-import { faqs, services } from '../../../contans';
-import About from '../about/page';
+import { faqs, galerias, services } from '../../../contans';
 import GooglePreview from '@/features/home/components/GooglePreview';
 import FAQ from './components/FAQ';
-import Art from './components/Art';
 import Services from './components/Services';
+import Galeria from './components/Galeria';
+import About from './components/About';
 
 gsap.registerPlugin(ScrollTrigger, SplitText);
 
@@ -15,10 +15,10 @@ const HomeComponent = () => {
         <main>
             <HeroSection />
             <Services service={services} />
-            <About />
             <GooglePreview />
-            <Art />
+            <About />
             <FAQ faq={faqs} />
+            <Galeria images={galerias} />
         </main>
     );
 };

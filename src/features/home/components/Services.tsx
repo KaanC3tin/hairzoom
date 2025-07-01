@@ -13,8 +13,8 @@ const Services = ({ service }: ServicesProps) => {
 
     return (
 
-        <section className="bg-black text-white min-h-screen pt-40 pb-20" id='service'>
-            <div className="px-6 md:px-16 lg:px-32 flex flex-col">
+        <section className="bg-black text-white min-h-screen" id='service'>
+            <div className="px-6 md:px-16 lg:px-32 flex flex-col pt-28">
                 <TitleComponent>
                     Hizmetlerimiz
                 </TitleComponent>

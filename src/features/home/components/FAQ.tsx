@@ -9,7 +9,7 @@ interface FaqProps {
 
 const FAQ = ({ faq }: FaqProps) => {
     return (
-        <div className='bg-black text-white min-h-screen py-20' id='faq'>
+        <div className='bg-black text-white h-screen' id='faq'>
             <div className='px-6 md:px-16 lg:px-32'>
                 <div className="flex flex-col items-center">
                     <TitleComponent>
