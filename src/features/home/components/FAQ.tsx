@@ -16,7 +16,7 @@ const FAQ = ({ faq }: FaqProps) => {
                         Sıkça Sorulan Sorular
                     </TitleComponent>
                     <AnimationComponent>
-                        <ul className="w-[60em] mx-auto mt-20 divide-y  shadow-neutral-100  shadow-sm">
+                        <ul className="w-[60em] mx-auto mt-20 divide-y  shadow-gray-50    shadow-sm">
                             {faq.map((item, index) => (
                                 <li key={index}>
                                     <details className="group">

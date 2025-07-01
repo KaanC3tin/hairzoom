@@ -1,6 +1,6 @@
 // import React from 'react'
 // import SocialLinks from './SocialLinks'
-// import { ContactInformationItem } from '../../contans/index';
+// import { ContactInformationItem, OpeningHourItem, openingHours, services } from '../../contans/index';
 // import AnimationComponent from './AnimationComponent';
 
 
@@ -47,17 +47,24 @@
 
 import React, { useRef, useEffect } from 'react'
 import SocialLinks from './SocialLinks'
-import { ContactInformationItem } from '../../contans/index'
+import { ContactInformationItem, OpeningHourItem, ServicesItem } from '../../contans/index'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
+import Link from 'next/link'
 
 gsap.registerPlugin(ScrollTrigger)
 
 interface ContactInformationProps {
-    informations: ContactInformationItem[]
+    informations: ContactInformationItem[];
+    openingHours: OpeningHourItem[];
+    services: ServicesItem[];
 }
 
-const Footer = ({ informations }: ContactInformationProps) => {
+
+const Footer = ({ informations, openingHours, services }: ContactInformationProps) => {
+    const manServices = services.find(s => s.category === 'erkek');
+    const womanServices = services.find(s => s.category === 'kadın');
+
     const mapRef = useRef<HTMLIFrameElement>(null)
     const infoRef = useRef<HTMLDivElement>(null)
 
@@ -75,7 +82,7 @@ const Footer = ({ informations }: ContactInformationProps) => {
 
             gsap.from(infoRef.current, {
                 y: 50,
-                opacity: 0,
+                opacity: 1,
                 ease: 'power2.out',
                 scrollTrigger: {
                     trigger: infoRef.current,
@@ -101,26 +108,67 @@ const Footer = ({ informations }: ContactInformationProps) => {
                     />
                 </div>
 
-                <div
-                    ref={infoRef}
-                    className="grid grid-cols-1 md:grid-cols-3 gap-6 text-sm md:text-base"
-                >
-                    {informations.map((info, idx) => (
-                        <div key={idx} className="space-y-2">
-                            <h3 className="text-lg font-semibold text-blue-400">İletişim</h3>
-                            <p><span className="font-semibold">Telefon:</span> {info.phone}</p>
-                            <p><span className="font-semibold">Email:</span> {info.email}</p>
-                            <p><span className="font-semibold">Adres:</span> {info.address}</p>
-                        </div>
-                    ))}
+                <div className="grid grid-cols-4 gap-6 text-sm md:text-base">
+                    {/* Sol Kolon: İletişim */}
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-blue-400">İletişim</h3>
+                        {informations.map((info, idx) => (
+                            <div key={idx} className="space-y-2">
+                                <p><span className="font-semibold text-white">Telefon:</span> {info.phone}</p>
+                                <p><span className="font-semibold">Email:</span> {info.email}</p>
+                                <p><span className="font-semibold">Adres:</span> {info.address}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    {/* Sağ Kolon: Çalışma Saatleri */}
+                    <div className="space-y-4">
+                        <h3 className="text-lg font-semibold text-blue-400">Çalışma Saatleri</h3>
+                        {openingHours.map((open, idx) => (
+                            <div key={idx} className="flex flex-col space-y-1">
+                                <p className='text-xs'><span className="font-semibold">Gün:</span> {open.day}</p>
+                                <p className='text-xs'><span className="font-semibold">Saat:</span> {open.hour}</p>
+                            </div>
+                        ))}
+                    </div>
+
+                    <div className="space-y-4">
+                        <h1 className='text-xl text-blue-400 font-semibold'>
+                            {manServices?.categoryTitle}
+                        </h1>
+                        {manServices?.items.map((man, idx) => (
+                            <div key={idx}>
+                                <Link
+                                    href={man?.href}
+                                >
+                                    {man?.title}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
+                    <div className="space-y-4">
+                        <h1 className='text-xl text-blue-400 font-semibold'>
+                            {womanServices?.categoryTitle}
+                        </h1>
+                        {womanServices?.items.map((man, idx) => (
+                            <div key={idx}>
+                                <Link
+                                    href={man?.href}
+                                >
+                                    {man?.title}
+                                </Link>
+                            </div>
+                        ))}
+                    </div>
                 </div>
+
 
                 <div className="pt-6 border-t border-gray-700">
                     <SocialLinks />
                 </div>
 
                 <p className="text-center text-sm text-gray-400">
-                    © {new Date().getFullYear()} HAIR ZOOM Woman & Man Coiffeur. Tüm hakları saklıdır.
+                    © {new Date().getFullYear()} HAIRZOOM Woman & Man Coiffeur. Tüm hakları saklıdır.
                 </p>
             </div>
         </footer>

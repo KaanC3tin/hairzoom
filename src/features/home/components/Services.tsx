@@ -1,7 +1,7 @@
 import React from 'react';
-import { ServicesItem } from '../../../contans';
-import TitleComponent from '../../share/TitleComponent';
 import AnimationComponent from '@/share/AnimationComponent';
+import TitleComponent from '@/share/TitleComponent';
+import { ServicesItem } from '../../../../contans/index';
 
 interface ServicesProps {
     service: ServicesItem[];
@@ -26,9 +26,10 @@ const Services = ({ service }: ServicesProps) => {
                                 {erkekServices?.categoryTitle}
                             </h3>
                             <div className="space-y-6">
-                                {erkekServices?.items.map((item, index) => (
+                                {erkekServices?.items.map((item) => (
                                     <div
-                                        key={index}
+                                        key={item.title}
+                                        id={item.href.replace('#', '')}
                                         className=" p-5 hover:scale-[1.02] transition-all duration-300"
                                     >
                                         <div className='flex justify-between'>
@@ -48,9 +49,10 @@ const Services = ({ service }: ServicesProps) => {
                                 {kadinServices?.categoryTitle}
                             </h3>
                             <div className="space-y-6">
-                                {kadinServices?.items.map((item, index) => (
+                                {kadinServices?.items.map((item) => (
                                     <div
-                                        key={index}
+                                        key={item.title}
+                                        id={item.href.replace('#', '')}
                                         className="p-5 hover:scale-[1.02] transition-all duration-300"
                                     >
                                         <div className='flex justify-between'>
