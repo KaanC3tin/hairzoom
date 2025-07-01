@@ -322,26 +322,10 @@ const Art = () => {
                 ease: 'power2.out'
             }, '-=1.4')
 
-            // 4. Balonlar yükselme efekti
-            .to('.left-balloon', {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.8,
-                ease: 'back.out(1.7)'
-            }, '-=1')
-            .to('.right-balloon', {
-                y: 0,
-                opacity: 1,
-                scale: 1,
-                duration: 1.8,
-                ease: 'back.out(1.7)'
-            }, '-=1.5');
-
     }, { scope: sectionRef });
 
     return (
-        <section ref={sectionRef} className="relative h-[200vh] bg-black overflow-hidden px-6 md:px-16 lg:px-32">
+        <section ref={sectionRef} className="relative h-[100vh] bg-black overflow-hidden px-6 md:px-16 lg:px-32" id='art'>
             <div className='text-center'>
                 <TitleComponent>
                     Biz Kimiz?

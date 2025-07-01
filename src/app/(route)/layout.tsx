@@ -1,7 +1,7 @@
 import React from 'react'
 import Footer from '@/share/Footer'
 import Header from '@/share/Header'
-import { contactInformation, navLinks } from '../../../contans/index';
+import { contactInformation, navLinks, openingHours, services } from '../../../contans/index';
 
 const SubLayout = ({ children }: { children: React.ReactNode }) => {
     return (
@@ -10,7 +10,11 @@ const SubLayout = ({ children }: { children: React.ReactNode }) => {
                 <Header links={navLinks} />
                 {children}
             </div>
-            <Footer informations={contactInformation} />
+            <Footer
+                informations={contactInformation}
+                openingHours={openingHours}
+                services={services}
+            />
         </>
     )
 }

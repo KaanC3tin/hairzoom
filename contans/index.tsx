@@ -18,9 +18,9 @@ export type LocationLinkItem = {
     href: string;
 }
 
-export type OpeningHoursItem = {
+export type OpeningHourItem = {
     day: string;
-    hours: string;
+    hour: string;
 };
 
 export type SocialLinksItem = {
@@ -60,6 +60,7 @@ export type ServicesItem = {
         image: string;
         description: string;
         price: string;
+        href: string;
     }[];
 }
 
@@ -93,34 +94,34 @@ export const navLinks: NavLinkItem[] = [
     },
 ];
 
-export const openingHours: OpeningHoursItem[] = [
+export const openingHours: OpeningHourItem[] = [
     {
         day: 'Pazartesi',
-        hours: '10:00  - 8:00',
+        hour: '10:00  - 8:00',
     },
     {
         day: 'Salı',
-        hours: '10:00  - 8:00',
+        hour: '10:00  - 8:00',
     },
     {
         day: 'Çarşamba',
-        hours: '10:00  - 8:00',
+        hour: '10:00  - 8:00',
     },
     {
         day: 'Perşembe',
-        hours: '10:00  - 8:00',
+        hour: '10:00  - 8:00',
     },
     {
         day: 'Cuma',
-        hours: '10:00  - 10:00',
+        hour: '10:00  - 10:00',
     },
     {
         day: 'Cumartesi',
-        hours: '10:00  - 10:00',
+        hour: '10:00  - 10:00',
     },
     {
         day: 'Pazar',
-        hours: 'Kapalı',
+        hour: 'Kapalı',
     },
 ];
 
@@ -150,19 +151,19 @@ export const contactInformation: ContactInformationItem[] = [
     },
 ]
 
-export const locationLinks: LocationLinkItem[] = [
-    {
-        id: 1,
-        title: 'Konum',
-        href: '#googlePreview'
-    }, {
-        id: 2,
-        title: 'SSS',
-        href: '#faq'
-    }, {
+// export const locationLinks: LocationLinkItem[] = [
+//     {
+//         id: 1,
+//         title: 'Konum',
+//         href: '#googlePreview'
+//     }, {
+//         id: 2,
+//         title: 'SSS',
+//         href: '#faq'
+//     }, {
 
-    }
-]
+//     }
+// ]
 // hizmetlerimiz bölümünden hem kadın hemde erkek için footer kısmına eklenecek + İşletme açılış kapanış saatleri + 
 export const teamMembers: TeamMembersItem[] = [
     {
@@ -326,36 +327,42 @@ export const services: ServicesItem[] = [
                 description: 'Özel günlerde size özel bakım ve stil deneyimi.',
                 image: '/images/services/groom.jpg',
                 price: '450₺',
+                href: '#damat-trasi'
             },
             {
                 title: 'Saç Kesimi',
                 description: 'Profesyonel saç kesimi hizmeti ile yeni bir görünüm kazanın.',
                 image: '/images/services/haircut.jpg',
                 price: '200₺',
+                href: '#sac-kesimi-erkek'
             },
             {
                 title: 'Saç Botoksu',
                 description: 'Yıpranmış saçlar için onarıcı bakım.',
                 image: '/images/services/hair-botox.jpg',
                 price: '350₺',
+                href: '#sac-botoksu-erkek'
             },
             {
                 title: 'Sakal Tasarımı',
                 description: 'Yüz hatlarınıza uygun profesyonel sakal şekillendirme.',
                 image: '/images/services/beard.jpg',
                 price: '180₺',
+                href: '#sakal-tasarimi'
             },
             {
                 title: 'Manikür (Erkek)',
                 description: 'Bakımlı eller için detaylı manikür uygulaması.',
                 image: '/images/services/mens-manicure.jpg',
                 price: '150₺',
+                href: '#manikur-erkek'
             },
             {
                 title: 'Kaş Tasarımı',
                 description: 'Yüz şekline uygun kaş düzenlemesi ve bakımı.',
                 image: '/images/services/brows.jpg',
                 price: '170₺',
+                href: '#kas-tasarimi-erkek'
             },
         ],
     },
@@ -368,36 +375,42 @@ export const services: ServicesItem[] = [
                 description: 'En özel gününüzde size özel saç ve makyaj tasarımı.',
                 image: '/images/services/bridal.jpg',
                 price: '1500₺',
+                href: '#gelin-saci-makyaji'
             },
             {
                 title: 'Keratin Bakımı',
                 description: 'Saçlarınıza sağlık ve parlaklık kazandırın.',
                 image: '/images/services/keratin.jpg',
                 price: '700₺',
+                href: '#keratin-bakimi-kadin'
             },
             {
                 title: 'Saç Renklendirme (Balayage / Ombre)',
                 description: 'Trend renk geçişleriyle modern görünüm.',
                 image: '/images/services/coloring.jpg',
                 price: '850₺',
+                href: '#sac-reklendirme-kadin'
             },
             {
                 title: 'Cilt Bakımı',
                 description: 'Cildinize tazelik ve ışıltı kazandıran lüks bakım.',
                 image: '/images/services/skincare.jpg',
                 price: '600₺',
+                href: '#cilt-bakimi-kadin'
             },
             {
                 title: 'Manikür & Pedikür',
                 description: 'Profesyonel el ve ayak bakımı hizmeti.',
                 image: '/images/services/nails.jpg',
                 price: '300₺',
+                href: '#manikur-pedkikur-kadin'
             },
             {
                 title: 'Saç Düzleştirme',
                 description: 'Düz, pürüzsüz ve sağlıklı görünen saçlar.',
                 image: '/images/services/straightening.jpg',
                 price: '550₺',
+                href: '#sac-duzlestirme-kadin'
             },
         ],
     },
