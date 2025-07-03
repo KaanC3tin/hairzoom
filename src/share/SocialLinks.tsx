@@ -1,33 +1,98 @@
-import React from 'react'
-import WhatsappIcon from './WhatsappIcon'
-import Link from 'next/link'
+import React from 'react';
 
 const SocialLinks = () => {
+    const whatsappLink = `https://wa.me/905468200120?text=${encodeURIComponent(
+        'Merhaba, randevu almak istiyorum.'
+    )}`;
+
     return (
-        <div className='flex justify-center'>
-            <div className='flex flex-row'>
-                {/* /*Twitter */}
-                {/* /*FaceBook */}
-                <Link href='https://www.facebook.com/hairzoomm/' target='_blank'>
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="50" viewBox="0 0 50 50" fill='white'>
-                        <path d="M25,3C12.85,3,3,12.85,3,25c0,11.03,8.125,20.137,18.712,21.728V30.831h-5.443v-5.783h5.443v-3.848 c0-6.371,3.104-9.168,8.399-9.168c2.536,0,3.877,0.188,4.512,0.274v5.048h-3.612c-2.248,0-3.033,2.131-3.033,4.533v3.161h6.588 l-0.894,5.783h-5.694v15.944C38.716,45.318,47,36.137,47,25C47,12.85,37.15,3,25,3z"></path>
-                    </svg>
-                </Link>
-                {/* /*Instagram */}
-                <Link
-                    href='https://www.instagram.com/hairzoom_/' target='_blank'>
-                    <svg xmlns="http://www.w3.org/2000/svg" x="0px" y="0px" width="64" height="50" viewBox="0 0 64 64" fill='white'>
-                        <path d="M 21.580078 7 C 13.541078 7 7 13.544938 7 21.585938 L 7 42.417969 C 7 50.457969 13.544938 57 21.585938 57 L 42.417969 57 C 50.457969 57 57 50.455062 57 42.414062 L 57 21.580078 C 57 13.541078 50.455062 7 42.414062 7 L 21.580078 7 z M 47 15 C 48.104 15 49 15.896 49 17 C 49 18.104 48.104 19 47 19 C 45.896 19 45 18.104 45 17 C 45 15.896 45.896 15 47 15 z M 32 19 C 39.17 19 45 24.83 45 32 C 45 39.17 39.169 45 32 45 C 24.83 45 19 39.169 19 32 C 19 24.831 24.83 19 32 19 z M 32 23 C 27.029 23 23 27.029 23 32 C 23 36.971 27.029 41 32 41 C 36.971 41 41 36.971 41 32 C 41 27.029 36.971 23 32 23 z"></path>
-                    </svg>
-                    {/* Whatsapp */}
-                </Link>
-                <WhatsappIcon />
-            </div>
+        <div>
+            <ul className="flex justify-center items-center">
+                {/* Whatsapp */}
+                <li className="relative mx-2 group">
+                    <a
+                        data-social="whatsapp"
+                        aria-label="Whatsapp"
+                        target='_blank'
+                        rel='noopener noreferrer'
+                        href={whatsappLink}
+                        className="relative flex justify-center items-center w-[50px] h-[50px] rounded-full bg-white text-gray-700 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[3px_2px_45px_0px_rgba(0,0,0,0.12)]"
+                    >
+                        <div className="absolute left-0 bottom-0 w-full h-0 bg-[#128c7e] transition-all duration-300 ease-in-out group-hover:h-full z-0"></div>
+                        <svg
+                            xmlSpace="preserve"
+                            viewBox="0 0 24 24"
+                            className="bi bi-whatsapp w-[30px] h-[30px] relative z-10 group-hover:text-[#efefef] transition-colors"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M17.472 14.382c-.297-.149-1.758-.867-2.03-.967-.273-.099-.471-.148-.67.15-.197.297-.767.966-.94 1.164-.173.199-.347.223-.644.075-.297-.15-1.255-.463-2.39-1.475-.883-.788-1.48-1.761-1.653-2.059-.173-.297-.018-.458.13-.606.134-.133.298-.347.446-.52.149-.174.198-.298.298-.497.099-.198.05-.371-.025-.52-.075-.149-.669-1.612-.916-2.207-.242-.579-.487-.5-.669-.51-.173-.008-.371-.01-.57-.01-.198 0-.52.074-.792.372-.272.297-1.04 1.016-1.04 2.479 0 1.462 1.065 2.875 1.213 3.074.149.198 2.096 3.2 5.077 4.487.709.306 1.262.489 1.694.625.712.227 1.36.195 1.871.118.571-.085 1.758-.719 2.006-1.413.248-.694.248-1.289.173-1.413-.074-.124-.272-.198-.57-.347m-5.421 7.403h-.004a9.87 9.87 0 01-5.031-1.378l-.361-.214-3.741.982.998-3.648-.235-.374a9.86 9.86 0 01-1.51-5.26c.001-5.45 4.436-9.884 9.888-9.884 2.64 0 5.122 1.03 6.988 2.898a9.825 9.825 0 012.893 6.994c-.003 5.45-4.437 9.884-9.885 9.884m8.413-18.297A11.815 11.815 0 0012.05 0C5.495 0 .16 5.335.157 11.892c0 2.096.547 4.142 1.588 5.945L.057 24l6.305-1.654a11.882 11.882 0 005.683 1.448h.005c6.554 0 11.89-5.335 11.893-11.893a11.821 11.821 0 00-3.48-8.413Z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <div className="absolute top-[-30px] left-1/2 -translate-x-1/2 text-white text-sm px-2.5 py-1.5 rounded bg-[#128c7e] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[-50px] transition-all duration-300 ease-in-out">
+                        Whatsapp
+                    </div>
+                </li>
+
+                {/* Facebook */}
+                <li className="relative mx-2 group">
+                    <a
+                        data-social="facebook"
+                        aria-label="Facebook"
+                        href="https://www.facebook.com/"
+                        className="relative flex justify-center items-center w-[50px] h-[50px] rounded-full bg-white text-gray-700 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[3px_2px_45px_0px_rgba(0,0,0,0.12)]"
+                    >
+                        <div className="absolute left-0 bottom-0 w-full h-0 bg-[#3b5998] transition-all duration-300 ease-in-out group-hover:h-full z-0"></div>
+                        <svg
+                            xmlSpace="preserve"
+                            viewBox="0 0 24 24"
+                            className="bi bi-facebook w-[30px] h-[30px] relative z-10 group-hover:text-[#efefef] transition-colors"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M23.9981 11.9991C23.9981 5.37216 18.626 0 11.9991 0C5.37216 0 0 5.37216 0 11.9991C0 17.9882 4.38789 22.9522 10.1242 23.8524V15.4676H7.07758V11.9991H10.1242V9.35553C10.1242 6.34826 11.9156 4.68714 14.6564 4.68714C15.9692 4.68714 17.3424 4.92149 17.3424 4.92149V7.87439H15.8294C14.3388 7.87439 13.8739 8.79933 13.8739 9.74824V11.9991H17.2018L16.6698 15.4676H13.8739V23.8524C19.6103 22.9522 23.9981 17.9882 23.9981 11.9991Z"
+                            ></path>
+                        </svg>
+                    </a>
+                    <div className="absolute top-[-30px] left-1/2 -translate-x-1/2 text-white text-sm px-2.5 py-1.5 rounded bg-[#3b5998] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[-50px] transition-all duration-300 ease-in-out">
+                        Facebook
+                    </div>
+                </li>
+
+                {/* Instagram */}
+                <li className="relative mx-2 group">
+                    <a
+                        data-social="instagram"
+                        aria-label="Instagram"
+                        href="https://www.instagram.com/"
+                        className="relative flex justify-center items-center w-[50px] h-[50px] rounded-full bg-white text-gray-700 overflow-hidden transition-all duration-300 ease-in-out hover:shadow-[3px_2px_45px_0px_rgba(0,0,0,0.12)]"
+                    >
+                        <div className="absolute left-0 bottom-0 w-full h-0 bg-gradient-to-br from-[#405de6] via-[#b33ab4] to-[#fd1f1f] transition-all duration-300 ease-in-out group-hover:h-full z-0"></div>
+                        <svg
+                            xmlSpace="preserve"
+                            viewBox="0 0 16 16"
+                            className="bi bi-instagram w-[24px] h-[24px] relative z-10 hover:text-[#efefef] group-hover:text-[#efefef] transition-colors"
+                            fill="currentColor"
+                            xmlns="http://www.w3.org/2000/svg"
+                        >
+                            <path
+                                fill="currentColor"
+                                d="M8 0C5.829 0 5.556.01 4.703.048 3.85.088 3.269.222 2.76.42a3.9 3.9 0 0 0-1.417.923A3.9 3.9 0 0 0 .42 2.76C.222 3.268.087 3.85.048 4.7.01 5.555 0 5.827 0 8.001c0 2.172.01 2.444.048 3.297.04.852.174 1.433.372 1.942.205.526.478.972.923 1.417.444.445.89.719 1.416.923.51.198 1.09.333 1.942.372C5.555 15.99 5.827 16 8 16s2.444-.01 3.298-.048c.851-.04 1.434-.174 1.943-.372a3.9 3.9 0 0 0 1.416-.923c.445-.445.718-.891.923-1.417.197-.509.332-1.09.372-1.942C15.99 10.445 16 10.173 16 8s-.01-2.445-.048-3.299c-.04-.851-.175-1.433-.372-1.941a3.9 3.9 0 0 0-.923-1.417A3.9 3.9 0 0 0 13.24.42c-.51-.198-1.092-.333-1.943-.372C10.443.01 10.172 0 7.998 0zm-.717 1.442h.718c2.136 0 2.389.007 3.232.046.78.035 1.204.166 1.486.275.373.145.64.319.92.599s.453.546.598.92c.11.281.24.705.275 1.485.039.843.047 1.096.047 3.231s-.008 2.389-.047 3.232c-.035.78-.166 1.203-.275 1.485a2.5 2.5 0 0 1-.599.919c-.28.28-.546.453-.92.598-.28.11-.704.24-1.485.276-.843.038-1.096.047-3.232.047s-2.39-.009-3.233-.047c-.78-.036-1.203-.166-1.485-.276a2.5 2.5 0 0 1-.92-.598 2.5 2.5 0 0 1-.6-.92c-.109-.281-.24-.705-.275-1.485-.038-.843-.046-1.096-.046-3.233s.008-2.388.046-3.231c.036-.78.166-1.204.276-1.486.145-.373.319-.64.599-.92s.546-.453.92-.598c.282-.11.705-.24 1.485-.276.738-.034 1.024-.044 2.515-.045zm4.988 1.328a.96.96 0 1 0 0 1.92.96.96 0 0 0 0-1.92m-4.27 1.122a4.109 4.109 0 1 0 0 8.217 4.109 4.109 0 0 0 0-8.217m0 1.441a2.667 2.667 0 1 1 0 5.334 2.667 2.667 0 0 1 0-5.334"
+                            ></path>
+                        </svg>
+                    </a>
+                    <div className="absolute top-[-30px] left-1/2 -translate-x-1/2 text-white text-sm px-2.5 py-1.5 rounded bg-gradient-to-br from-[#405de6] via-[#b33ab4] to-[#fd1f1f] opacity-0 invisible group-hover:opacity-100 group-hover:visible group-hover:top-[-50px] transition-all duration-300 ease-in-out">
+                        Instagram
+                    </div>
+                </li>
+            </ul>
         </div>
-    )
-}
+    );
+};
 
-export default SocialLinks
-
-
-
+export default SocialLinks;

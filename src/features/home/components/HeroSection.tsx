@@ -113,7 +113,7 @@ const HeroSection = () => {
                 ref={textContainerRef}
                 className="relative z-10 flex flex-col items-center justify-center min-h-screen px-5"
             >
-                <h1 className="title absolute top-24 md:mt-40 mt-28 text-6xl md:text-[5vw] leading-none text-center">
+                <h1 className={`title absolute top-24 md:mt-40 mt-28 text-6xl md:text-[5vw] :block md:block leading-none text-center ${isMobile ? 'hidden' : 'block'}`}>
                     TARZINI BELİRLE
                 </h1>
 
@@ -121,21 +121,21 @@ const HeroSection = () => {
                     <div className="flex lg:flex-row flex-col w-full gap-10 justify-between items-center lg:items-end mx-auto">
                         <div className="space-y-4 hidden md:block absolute left-11 bottom-5">
                             <p className="mx-auto subtitle">Stilini uzman dokunuşlarla yeniden tanımla.</p>
-                            <p className="subtitle text-yellow-600 text-6xl text-yellow max-w-xl 2xl:text-start text-center">
-                                Sana özel görünüm, sana özel deneyim
+                            <p className="subtitle text-yellow-600 text-5xl md:text-4xl text-yellow max-w-xl 2xl:text-start text-center">
+                                Tarz seninle Başlar.
                             </p>
                         </div>
 
                         <div className="text-lg lg:max-w-2xs md:max-w-xs w-full hidden md:block absolute right-11 bottom-5">
                             <p className="subtitle text-left mb-4">
-                                Alanında uzman ekibimizle, saç ve sakal bakımında modern çözümler sunarak tarzınızı zirveye taşıyor,
-                                özgüveninizi yeniden şekillendiriyoruz.
+                                Profesyonel saç kesimi, bakım ve stil; erkek ve kadınlara özel çözümler.
+
                             </p>
                             <Link
                                 href="#service"
-                                className="subtitle font-semibold opacity-80 2xl:text-start text-center hover:text-yellow-600 duration-300 hover:underline-offset-2 hover:underline underline-none transition-all"
+                                className="subtitle font-semibold opacity-80 2xl:text-start text-center text-yellow-600 hover:text-amber-700 duration-300 hover:underline-offset-2 hover:underline underline-none transition-all"
                             >
-                                Hizmetlerimiz!
+                                Hizmetlerimizi keşfet!
                             </Link>
                         </div>
                     </div>

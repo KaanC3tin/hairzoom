@@ -1,7 +1,7 @@
 import React from 'react';
 import AnimationComponent from '@/share/AnimationComponent';
 import TitleComponent from '@/share/TitleComponent';
-import { ServicesItem } from '../../../../contans/index';
+import { ServicesItem } from '../../../../contants/index';
 
 interface ServicesProps {
     service: ServicesItem[];
@@ -29,8 +29,8 @@ const Services = ({ service }: ServicesProps) => {
                                 {erkekServices?.items.map((item) => (
                                     <div
                                         key={item.title}
+                                        className="p-5 hover:scale-[1.02] transition-all duration-300 scroll-mt-28"
                                         id={item.href.replace('#', '')}
-                                        className=" p-5 hover:scale-[1.02] transition-all duration-300"
                                     >
                                         <div className='flex justify-between'>
                                             <h4 className="text-lg font-bold mb-1">{item.title}</h4>
@@ -53,7 +53,7 @@ const Services = ({ service }: ServicesProps) => {
                                     <div
                                         key={item.title}
                                         id={item.href.replace('#', '')}
-                                        className="p-5 hover:scale-[1.02] transition-all duration-300"
+                                        className="p-5 hover:scale-[1.02] transition-all duration-300 scroll-mt-28"
                                     >
                                         <div className='flex justify-between'>
                                             <h4 className="text-lg font-bold mb-1">{item.title}</h4>

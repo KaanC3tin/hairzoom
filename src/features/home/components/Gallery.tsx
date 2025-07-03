@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import { GaleriaItem } from '../../../../contans';
+import { GalleryItem } from '../../../../contants';
 import Image from 'next/image';
 import gsap from 'gsap';
 import { ScrollTrigger } from 'gsap/ScrollTrigger';
@@ -9,11 +9,11 @@ import { useGSAP } from '@gsap/react';
 
 gsap.registerPlugin(ScrollTrigger);
 
-interface GaleriaProps {
-    images: GaleriaItem[];
+interface GalleryProps {
+    images: GalleryItem[];
 }
 
-const Galeria = ({ images }: GaleriaProps) => {
+const Gallery = ({ images }: GalleryProps) => {
     const galleryRef = useRef<HTMLDivElement>(null);
     const anims = useRef<gsap.core.Tween[]>([]);
 
@@ -49,12 +49,13 @@ const Galeria = ({ images }: GaleriaProps) => {
     }, []);
 
     return (
-        <div className="sm:h-[150vh]  bg-black text-white">
+        <div className="sm:h-[150vh]  bg-black text-white" id='gallery'>
             <TitleComponent>Galeri</TitleComponent>
+
             <div className="px-6 md:px-12 lg:px-32">
                 <div
                     ref={galleryRef}
-                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-3 lg:grid-cols-4 gap-6"
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 lg:grid-cols-3 xl:grid-cols-4 gap-6"
                 >
                     {images.map((img, idx) => (
                         <div
@@ -63,7 +64,7 @@ const Galeria = ({ images }: GaleriaProps) => {
                         >
                             <Image
                                 src={img.href}
-                                alt={`galeria-${idx}`}
+                                alt={`Gallery-${idx}`}
                                 fill
                                 className="object-cover object-center"
                             />
@@ -76,4 +77,4 @@ const Galeria = ({ images }: GaleriaProps) => {
     );
 };
 
-export default Galeria;
+export default Gallery;

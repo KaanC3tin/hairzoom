@@ -135,7 +135,7 @@
 'use client'
 import React, { useRef } from 'react'
 import SocialLinks from './SocialLinks'
-import { ContactInformationItem, OpeningHourItem, ServicesItem } from '../../contans/index'
+import { ContactInformationItem, OpeningHourItem, ServicesItem } from '../../contants/index'
 import { gsap } from 'gsap'
 import { ScrollTrigger } from 'gsap/ScrollTrigger'
 import Link from 'next/link'
@@ -198,10 +198,10 @@ const Footer = ({ informations, openingHours, services }: ContactInformationProp
 
                 <div
                     ref={infoRef}
-                    className="flex flex-col md:flex-row md:justify-between gap-10 md:gap-6 text-sm md:text-base"
+                    className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-2 gap-y-6 lg:grid-cols-4 gap-x-16 text-sm md:text-base md:px-10 mx-auto"
                 >
                     {/* İletişim */}
-                    <div className="flex-1 space-y-4">
+                    <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-blue-400 mb-2">İletişim</h3>
                         {informations.map((info, idx) => (
                             <div key={idx} className="space-y-2">
@@ -213,7 +213,7 @@ const Footer = ({ informations, openingHours, services }: ContactInformationProp
                     </div>
 
                     {/* Çalışma Saatleri */}
-                    <div className="flex-1 space-y-4">
+                    <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-blue-400 mb-2">Çalışma Saatleri</h3>
                         {openingHours.map((open, idx) => (
                             <div key={idx} className="flex justify-between border-b border-gray-700 py-1 last:border-0">
@@ -224,7 +224,7 @@ const Footer = ({ informations, openingHours, services }: ContactInformationProp
                     </div>
 
                     {/* Erkek Hizmetleri */}
-                    <div className="flex-1 space-y-4">
+                    <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-blue-400 mb-2">{manServices?.categoryTitle}</h3>
                         {manServices?.items.map((man, idx) => (
                             <Link
@@ -238,7 +238,7 @@ const Footer = ({ informations, openingHours, services }: ContactInformationProp
                     </div>
 
                     {/* Kadın Hizmetleri */}
-                    <div className="flex-1 space-y-4">
+                    <div className="space-y-4">
                         <h3 className="text-lg font-semibold text-blue-400 mb-2">{womanServices?.categoryTitle}</h3>
                         {womanServices?.items.map((woman, idx) => (
                             <Link
@@ -251,6 +251,7 @@ const Footer = ({ informations, openingHours, services }: ContactInformationProp
                         ))}
                     </div>
                 </div>
+
 
                 <div className="pt-6 border-t border-gray-700">
                     <SocialLinks />

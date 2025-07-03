@@ -166,8 +166,8 @@ body {
 
 /* Font Tanımı */
 @font-face {
-  font-family: "BarberChop";
-  src: url("/fonts/Bright-Aura.ttf") format("truetype");
+  font-family: "Vogue";
+  src: url("/fonts/Vogue.ttf") format("truetype");
   font-display: swap;
 }
 
@@ -175,7 +175,7 @@ body {
   --color-yellow: #fbbf24;
   --color-white: #efefef;
   --font-sans: Mona Sans, sans-serif;
-  --font-modern: "BarberChop", sans-serif;
+  --font-modern: "Vogue", sans-serif;
   --font-serif: "DM Serif Text", serif;
   --bg: #000000;
   --color: #fff;
@@ -189,7 +189,9 @@ body {
   color: var(--color-white);
   scroll-behavior: smooth;
   overflow-x: hidden;
-  font-family: var(--font-modern);
+}
+h1 {
+  font-family: var(--font-modern) !important;
 }
 
 /* elfsight widget'ı zorla genişlet */

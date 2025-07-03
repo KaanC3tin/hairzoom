@@ -11,7 +11,7 @@ export type ContactInformationItem = {
     email: string
     address: string;
 };
-export type GaleriaItem = {
+export type GalleryItem = {
     id: string;
     href: string;
 }
@@ -60,7 +60,6 @@ export type ServicesItem = {
     category: string;
     items: {
         title: string;
-        image: string;
         description: string;
         price: string;
         href: string;
@@ -81,14 +80,19 @@ export const navLinks: NavLinkItem[] = [
         href: '#home',
     },
     {
+        id: 'service',
+        title: 'Hizmetlerimiz',
+        href: '#service',
+    },
+    {
         id: 'about',
         title: 'Hakkımızda',
         href: '#about',
     },
     {
-        id: 'service',
-        title: 'Hizmetlerimiz',
-        href: '#service',
+        id: 'gallery',
+        title: 'Galeri',
+        href: '#gallery',
     },
     {
         id: 'contact',
@@ -100,27 +104,27 @@ export const navLinks: NavLinkItem[] = [
 export const openingHours: OpeningHourItem[] = [
     {
         day: 'Pazartesi',
-        hour: '10:00  - 8:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Salı',
-        hour: '10:00  - 8:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Çarşamba',
-        hour: '10:00  - 8:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Perşembe',
-        hour: '10:00  - 8:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Cuma',
-        hour: '10:00  - 10:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Cumartesi',
-        hour: '10:00  - 10:00',
+        hour: '08:00  - 20:00',
     },
     {
         day: 'Pazar',
@@ -203,46 +207,40 @@ export const services: ServicesItem[] = [
         category: 'erkek',
         items: [
             {
-                title: 'Damat Traşı (VIP)',
-                description: 'Özel günlerde size özel bakım ve stil deneyimi.',
-                image: '/images/services/groom.jpg',
-                price: '450₺',
-                href: '#damat-trasi'
-            },
-            {
                 title: 'Saç Kesimi',
-                description: 'Profesyonel saç kesimi hizmeti ile yeni bir görünüm kazanın.',
-                image: '/images/services/haircut.jpg',
-                price: '200₺',
+                description: 'Yüz hatlarınıza uygun, modern ve stil sahibi saç kesimi.',
+                price: '400₺',
                 href: '#sac-kesimi-erkek'
             },
             {
                 title: 'Saç Botoksu',
-                description: 'Yıpranmış saçlar için onarıcı bakım.',
-                image: '/images/services/hair-botox.jpg',
+                description: 'Mat ve yıpranmış saçlar için derinlemesine onarıcı bakım.',
+                price: '350₺',
+                href: '#sac-botoksu-erkek'
+            },
+            {
+                title: 'Saç Şekillendirme',
+                description: 'Günlük stilinize uygun profesyonel saç tasarımı.',
                 price: '350₺',
                 href: '#sac-botoksu-erkek'
             },
             {
                 title: 'Sakal Tasarımı',
-                description: 'Yüz hatlarınıza uygun profesyonel sakal şekillendirme.',
-                image: '/images/services/beard.jpg',
-                price: '180₺',
+                description: 'Yüz yapınıza özel, özenle şekillendirilmiş sakal stili.',
+                price: '200₺',
                 href: '#sakal-tasarimi'
             },
             {
-                title: 'Manikür (Erkek)',
-                description: 'Bakımlı eller için detaylı manikür uygulaması.',
-                image: '/images/services/mens-manicure.jpg',
-                price: '150₺',
-                href: '#manikur-erkek'
+                title: 'Kaş Tasarımı',
+                description: 'Doğal görünümünüzü tamamlayan detaylı kaş düzenlemesi.',
+                price: '200₺',
+                href: '#kas-tasarimi'
             },
             {
-                title: 'Kaş Tasarımı',
-                description: 'Yüz şekline uygun kaş düzenlemesi ve bakımı.',
-                image: '/images/services/brows.jpg',
-                price: '170₺',
-                href: '#kas-tasarimi-erkek'
+                title: 'Saç Yıkama',
+                description: 'Ferahlık ve bakım sağlayan özel şampuanlama hizmeti.',
+                price: '100₺',
+                href: '#sac-yikama'
             },
         ],
     },
@@ -251,51 +249,44 @@ export const services: ServicesItem[] = [
         category: 'kadın',
         items: [
             {
-                title: 'Gelin Saçı & Makyajı',
-                description: 'En özel gününüzde size özel saç ve makyaj tasarımı.',
-                image: '/images/services/bridal.jpg',
-                price: '1500₺',
-                href: '#gelin-saci-makyaji'
+                title: 'Saç Bakımı',
+                description: 'Canlılık, parlaklık ve güç kazandıran yoğun saç bakımı.',
+                price: '1000₺',
+                href: '#sac-bakimi-kadin'
             },
             {
-                title: 'Keratin Bakımı',
-                description: 'Saçlarınıza sağlık ve parlaklık kazandırın.',
-                image: '/images/services/keratin.jpg',
-                price: '700₺',
-                href: '#keratin-bakimi-kadin'
+                title: 'Ombre',
+                description: 'Saçta doğal geçişlerle ışıltılı ve sofistike bir görünüm.',
+                price: '4500-7500₺',
+                href: '#ombre'
             },
             {
-                title: 'Saç Renklendirme (Balayage / Ombre)',
-                description: 'Trend renk geçişleriyle modern görünüm.',
-                image: '/images/services/coloring.jpg',
-                price: '850₺',
-                href: '#sac-reklendirme-kadin'
-            },
-            {
-                title: 'Cilt Bakımı',
-                description: 'Cildinize tazelik ve ışıltı kazandıran lüks bakım.',
-                image: '/images/services/skincare.jpg',
-                price: '600₺',
-                href: '#cilt-bakimi-kadin'
-            },
-            {
-                title: 'Manikür & Pedikür',
-                description: 'Profesyonel el ve ayak bakımı hizmeti.',
-                image: '/images/services/nails.jpg',
+                title: 'Manikür',
+                description: 'Bakımlı eller için detaylı tırnak temizliği ve şekillendirme.',
                 price: '300₺',
                 href: '#manikur-pedkikur-kadin'
             },
             {
-                title: 'Saç Düzleştirme',
-                description: 'Düz, pürüzsüz ve sağlıklı görünen saçlar.',
-                image: '/images/services/straightening.jpg',
+                title: 'Pedikür',
+                description: 'Ayaklara ferahlık kazandıran hijyenik ve estetik bakım.',
+                price: '300₺',
+                href: '#manikur-pedkikur-kadin'
+            },
+            {
+                title: 'Profesyonel Makyaj',
+                description: 'Cilt tonunuza uygun, zarif ve kalıcı makyaj uygulaması.',
                 price: '550₺',
-                href: '#sac-duzlestirme-kadin'
+                href: '#profesyonel-makyaj'
+            },
+            {
+                title: 'Gelin Saçı & Makyajı',
+                description: 'Düğün gününüz için özel tasarlanmış saç ve makyaj uyumu.',
+                price: '9700₺',
+                href: '#gelin-saci-makyaji'
             },
         ],
     },
 ];
-
 
 export const faqs: FaqItem[] = [
     {
@@ -331,7 +322,7 @@ export const faqs: FaqItem[] = [
 
 ];
 
-export const galerias: GaleriaItem[] = [
+export const gallery: GalleryItem[] = [
     {
         id: '1',
         href: '/images/galeria-1.jpeg'

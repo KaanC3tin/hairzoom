@@ -1,6 +1,6 @@
 'use client';
 import React, { useRef } from 'react';
-import { NavLinkItem } from '../../contans/index';
+import { NavLinkItem } from '../../contants/index';
 import gsap from 'gsap';
 import { useGSAP } from '@gsap/react';
 import { ScrollTrigger } from 'gsap/all';

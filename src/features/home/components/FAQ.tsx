@@ -1,5 +1,5 @@
 import React from 'react'
-import { FaqItem } from '../../../../contans'
+import { FaqItem } from '../../../../contants'
 import AnimationComponent from '@/share/AnimationComponent'
 import TitleComponent from '@/share/TitleComponent'
 
